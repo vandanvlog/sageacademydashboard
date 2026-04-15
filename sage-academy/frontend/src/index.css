@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply font-sans text-gray-900 bg-gray-50 antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-400 transition-all duration-150 cursor-pointer hover:bg-brand-sidebar-hover hover:text-white;
+  }
+
+  .sidebar-link.active {
+    @apply bg-brand-sidebar-active text-white;
+  }
+
+  .kpi-card {
+    @apply bg-white rounded-xl p-5 shadow-card border border-gray-100;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-gray-900;
+  }
+
+  .section-title {
+    @apply text-base font-semibold text-gray-800 mb-4;
+  }
+}
