@@ -41,8 +41,9 @@ app.use('/api/reports', reportsRoutes);
 // Global error handler
 app.use((err, req, res, next) => {
   console.error('Unhandled error:', err);
-  res.status(err.status || 500).json({
-    message: err.message || 'Internal server error',
+  const status = err.status || 500;
+  res.status(status).json({
+    message: status < 500 ? err.message : 'Internal server error',
   });
 });
 
